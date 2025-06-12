@@ -10,6 +10,9 @@ const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "翠翔祭HP",
   description: "翠翔祭2025の公式サイトです。有益な情報を公開しています!",
+  verification: {
+    google: "MxRHVCLgl_CHwlcqvPGVOgGooFSBdU0UdGq2UGc_JIc"
+  },
   openGraph: {
     title: "翠翔祭HP",
     description: "翠翔祭2025の公式サイトです。有益な情報を公開しています!",
