@@ -6,8 +6,10 @@ import Three from "./Three";
 
 export default function ThreePage() {
     return (
-            <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
+            <DevOnly>
                 <Three />
-            </Suspense>
+            </DevOnly>
+        </Suspense>
     );
 }
