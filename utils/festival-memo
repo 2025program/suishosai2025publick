@@ -1,0 +1,7 @@
+お手本
+ // 焼きそば：食販かつ全日制の属性を持たせる
+    { title: '焼きそば', reading: "やきそば", attributes: [Sun, Soup], floor: 1, x: 865, y: 300, class: "sample", location: "sample" },
+    // 野外ステージ
+    { title: '腕相撲', reading: 'うでずもう', attributes: [Drum], floor: 1, x: 350, y: 350, class: "sample", location: "sample" },
+    // 定時制
+    { title: '定時制', reading: "ていじせい", attributes: [Moon, Soup], floor: 1, x: 865, y: 300, class: "sample", location: "sample" },

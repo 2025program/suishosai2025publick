@@ -1,0 +1,250 @@
+.outerContainer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    position: relative
+}
+
+/* ヘッダー部分 */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 16px;
+    font-size: 1.2rem;
+    border: 2px solid #0070f3;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus {
+    border-color: #005bb5;
+}
+
+.suggestionList {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestionItem {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestionItem:hover {
+    background-color: #f0f0f0;
+}
+
+/* 階層選択ボタン（ヘッダー内配置） */
+.floorSelector {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+.buttonContainer {
+    position: relative;
+    display: flex;
+    gap: 0;
+    width: 100%;
+    background-color: #B3E5FC;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: #81D4FA;
+    border-radius: 8px;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.buttonContainer button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    color: #0277BD;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.activeButton {
+    color: #fff;
+}
+
+/* マップ表示部分 */
+.mapWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* 各ブレークポイントで固定ピクセル指定 */
+/* デスクトップ：1290×967px */
+@media (min-width: 1290px) {
+    .mapContainer {
+        width: 1290px;
+        height: 967px;
+    }
+}
+
+/* 1290px未満、かつ880px以上：880×660px */
+@media (max-width: 1289px) and (min-width: 950px) {
+    .mapContainer {
+        width: 880px;
+        height: 660px;
+    }
+}
+
+/* 880px未満、かつ620px以上：620×465px */
+@media (max-width: 949px) and (min-width: 630px) {
+    .mapContainer {
+        width: 620px;
+        height: 465px;
+    }
+}
+
+/* 620px未満、かつ420px以上：420×315px */
+@media (max-width: 629px) and (min-width: 420px) {
+    .mapContainer {
+        width: 420px;
+        height: 315px;
+    }
+}
+
+/* 420px未満（必要に応じて調整） */
+@media (max-width: 419px) {
+    .mapContainer {
+        width: 336px;
+        height: 252px;
+    }
+}
+
+.mapContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.innerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    transform: rotateX(30deg);
+}
+
+.floor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mapImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ピン用のスタイル */
+.pinWrapper {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    z-index: 20;
+}
+
+.pinContent {
+    transform: rotateY(-30deg);
+    position: relative;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip {
+    position: absolute;
+    top: -50px;
+    left: 25px;
+    padding: 5px 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mapex {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    row-gap: 10px;
+    /* コンテンツ間の余白 */
+}
+
+.exfloor {
+    display: flex;
+    width: 165px;
+    justify-content: center;
+}
+
+.exname {
+    padding-right: 10px;
+    width: 110px;
+}
+
+.excolor1 {
+    width: 40px;
+    background-color: rgba(94, 255, 56, 1);
+}
+
+.excolor2 {
+    width: 40px;
+    background-color: rgba(0, 75, 255, 1);
+}
+
+.excolor3 {
+    width: 40px;
+    background-color: rgba(255, 75, 0, 1);
+}
+
+.excolor4 {
+    width: 40px;
+    background-color: rgba(255, 75, 255, 1);
+}

@@ -1,0 +1,598 @@
+.eventcontent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+}
+
+.e-boxcontent {
+    width: 100%;
+}
+
+/** トップ画像用 */
+.roller {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 23vw;
+}
+
+.title {
+    font-family: Impact;
+    font-size: 10vw;
+    z-index: 3;
+}
+
+@media (max-width: 767px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 12vw;
+    }
+
+    .header {
+        height: 27vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .roller {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1400px;
+    }
+
+    .header {
+        width: 100%;
+        height: 300px;
+    }
+
+    .title {
+        font-size: 140px;
+    }
+}
+
+.toppers {
+    padding-bottom: 20px;
+}
+
+.e-content {
+    width: 100%;
+}
+
+.e-search {
+    position: relative;
+    width: 60vw;
+    max-width: 600px;
+    min-width: 330px;
+    margin: 0 auto;
+}
+
+.e-searchbox {
+    width: 100%;
+    padding: 10px 40px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.e-searchbox:focus {
+    outline: none;
+    border-color: #0070f3;
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+}
+
+/* 検索アイコン */
+.e-search::before {
+    content: '🔍';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+
+/* クリアボタン（入力がある場合に表示する） */
+.e-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #888;
+}
+
+.e-iconbox {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.e-iconnomal {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+.e-iconclick {
+    background-color: #0070f3;
+    color: #fff;
+    border-color: #005bb5;
+}
+
+.e-iconunclick {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.pop_button_area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pop_button_sec {
+    font-size: 12px;
+    border-radius: 5px;
+    border: 2px black solid;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.event_detail {
+    margin: 10px;
+}
+
+/* 画面幅が狭い場合、2列に変更 */
+@media (max-width: 450px) {
+    .e-iconbox {
+        flex-wrap: wrap;
+    }
+
+    .e-iconnomal {
+        flex: 0 0 calc(40% - 10px);
+    }
+}
+
+/* ----------------------- */
+/* 共通ベーススタイル */
+/* ----------------------- */
+
+.e-eventbox {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.e-eventbox-f {
+    display: grid;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* .container .card の共通部分 */
+.container .card {
+    position: relative;
+    width: 100%;
+    background-color: #ffd984;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* 画像内のスタイル */
+.piceve {
+    display: block;
+    border-radius: 10px;
+}
+
+/* 装飾用疑似要素（.container .card 共通） */
+.container .card:before,
+.container .card:after {
+    content: "";
+    z-index: 4;
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* 共通：ul内のli */
+.container .card .ul .li {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* ----------------------- */
+/* 1100px 以上（横並びカードデザイン） */
+/* ----------------------- */
+@media (min-width: 1100px) {
+
+    /* グリッドの列数 */
+    .e-eventbox-f {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1600px) {
+        .e-eventbox-f {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .pop_button_area {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .pop_button_sec {
+        margin-right: 10px;
+        width: 120px;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* .container .card 固有 */
+    .container .card {
+        height: 200px;
+        margin-bottom: 4px;
+    }
+
+    .card-all {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* 画像部分：固定200px */
+    .pic {
+        z-index: 3;
+        flex: 0 0 200px;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .card-right {
+        flex: 1;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        min-width: 0;
+    }
+
+    .card-item-box {
+        margin-top: 10px;
+        width: 100%;
+        height: 90px;
+        min-width: 0;
+    }
+
+    .card-item-box h2 {
+        font-size: 20px;
+        font-weight: 500;
+        color: #000;
+        white-space: normal;
+        line-break: anywhere;
+        word-break: break-word;
+    }
+
+    .card-about {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .card-about p {
+        color: #333;
+        opacity: 0.7;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    /* 装飾用疑似要素位置 */
+    .container .card:before {
+        top: -10px;
+        left: 193px;
+    }
+
+    .container .card:after {
+        bottom: -10px;
+        left: 193px;
+    }
+
+    /* ドットリスト */
+    .container .card .ul {
+        z-index: 2;
+        position: absolute;
+        left: 200px;
+        top: 5px;
+        list-style-type: none;
+    }
+
+    .container .card .ul .li {
+        margin: 6px 0;
+    }
+}
+
+/* ----------------------- */
+/* 1100px 未満（縦並びカードデザイン） */
+/* ----------------------- */
+@media (max-width: 1099px) {
+
+    /* グリッドの列数 */
+    .e-eventbox-f {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pop_button_sec {
+        width: 120px;
+    }
+
+    @media (min-width: 800px) {
+        .e-eventbox-f {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .pop_button_sec {
+            width: 200px;
+        }
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* .container .card 固有 */
+    .container .card {
+        max-width: 400px;
+        height: auto;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    /* ※モバイル用の独自装飾要素（side-r, side-l） */
+    .side-r,
+    .side-l {
+        margin-top: -7px;
+        position: absolute;
+        z-index: 4;
+        display: block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+
+    .side-l {
+        left: -10px;
+    }
+
+    .side-r {
+        right: -10px;
+    }
+
+    .card-all {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pic {
+        width: 100%;
+        max-height: 400px;
+        aspect-ratio: 1;
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+
+    .card-right {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-item-box {
+        margin: 0.5rem 0;
+        width: 100%;
+        height: 85px;
+        min-width: 0;
+    }
+
+    .card-item-box h2 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #000;
+        white-space: normal;
+        line-break: anywhere;
+        word-break: break-word;
+    }
+
+    .card-about {
+        margin-top: auto;
+    }
+
+    .card-about p {
+        color: #333;
+        opacity: 0.7;
+        font-size: clamp(10px, 2.8vw, 15px);
+        letter-spacing: 1px;
+        margin: 0.25rem 0;
+    }
+
+    .dot {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container .card:before,
+    .container .card:after {
+        display: none;
+    }
+
+    .container .card .ul {
+        position: absolute;
+        left: -15px;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        z-index: 2;
+    }
+}
+
+/* ----------------------- */
+/* 「該当項目なし」表示用 */
+/* ----------------------- */
+.nothing {
+    width: 100%;
+    height: 300px;
+    grid-column: 1 / -1;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftnot,
+.rightnot {
+    position: relative;
+    background-color: #ffd984;
+    height: 200px;
+}
+
+.leftnot {
+    transform: rotate(-10deg);
+    width: 150px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.rightnot {
+    transform: rotate(7deg);
+    width: 350px;
+    margin: 15px 0 0 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.leftnot::before,
+.leftnot::after,
+.rightnot::before,
+.rightnot::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    z-index: 4;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.leftnot::before {
+    top: -8px;
+    right: -8px;
+}
+
+.leftnot::after {
+    bottom: -8px;
+    right: -8px;
+}
+
+.rightnot::before {
+    top: -8px;
+    left: -8px;
+}
+
+.rightnot::after {
+    bottom: -8px;
+    left: -8px;
+}
+
+.leftnotbox {
+    height: 200px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.rightnotbox {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+
+    .leftnot,
+    .rightnot {
+        height: 150px;
+    }
+
+    .leftnotbox {
+        height: 150px;
+        padding: 0.5rem;
+    }
+
+    .rightnotbox {
+        height: 150px;
+    }
+}

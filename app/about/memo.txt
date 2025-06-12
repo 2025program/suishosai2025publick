@@ -1,0 +1,30 @@
+<div className="background-about-img" ref={leafRef}>
+                        <Image
+                            src="/about/leaf.png"
+                            alt=""
+                            width={800}
+                            height={1200}
+                            priority
+                        />
+                    </div>
+
+                    <picture className="roller">
+                        <source
+                            type=""
+                            media="(min-width: 1400px)"
+                            srcSet="/roller/roller-orange-biggest.png"
+                        />
+                        <source
+                            type=""
+                            media="(min-width: 768px)"
+                            srcSet="/roller/roller-orange-pc.png"
+                        />
+                        <Image
+                            className="roller-sp"
+                            src="/roller/roller-orange-sp.png"
+                            alt=""
+                            width={3000}
+                            height={1000}
+                            priority
+                        />
+                    </picture>

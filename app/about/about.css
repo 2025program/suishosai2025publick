@@ -1,0 +1,187 @@
+.roller {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 23vw;
+}
+
+.ab-title {
+    font-family: Impact;
+    font-size: 10vw;
+    z-index: 3;
+}
+
+@media (max-width: 767px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+    .roller {
+        right: 0;
+        left: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .ab-title {
+        font-size: 12vw;
+    }
+
+    .header {
+        height: 27vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .roller {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1400px;
+    }
+
+    .header {
+        width: 100%;
+        height: 300px;
+    }
+
+    .ab-title {
+        font-size: 140px;
+    }
+}
+
+.about-toppers {
+    padding-bottom: 20px;
+}
+
+.about-pc-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.about-main {
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.about-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
+    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
+    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.about-suiran h1,
+.about-theme h1,
+.about-top-member h1,
+.about-site h1,
+.about-commute h1 {
+    font-size: clamp(25px, 4.3vw, 33px);
+    color:#008dff;
+}
+
+.about-suiran h2,
+.about-theme h2,
+.about-top-member h2,
+.about-site h2,
+.about-commute h2 {
+    font-size: clamp(18px, 3.3vw, 28px);
+}
+
+.about-suiran h3,
+.about-theme h3,
+.about-top-member h3,
+.about-site h3,
+.about-commute h3 {
+    font-size: clamp(17px, 2.5vw, 23px);
+}
+
+.about-suiran p,
+.about-theme p,
+.about-top-member p,
+.about-site p,
+.about-commute p {
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: 1.5vh;
+}
+
+.about-suiran,
+.about-theme,
+.about-top-member,
+.about-site,
+.about-commute {
+    margin-bottom: 1.5vh;
+}
+
+.about-suiran a,
+.about-theme a,
+.about-top-member a,
+.about-site a,
+.about-commute a {
+    font-size: clamp(14px, 2vw, 20px);
+    color: rgb(75, 75, 255);
+    border-bottom: 2px solid rgb(75, 75, 255);
+}
+
+.about-suiran a:hover,
+.about-top-member a:hover,
+.about-site a:hover,
+.about-commute a:hover {
+    color: rgb(42, 42, 255);
+    border-bottom: 2px solid rgb(42, 42, 255);
+}
+
+.background-about-img {
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    will-change: transform;
+}
+
+.member-picture{
+    width: 50%;
+    
+}

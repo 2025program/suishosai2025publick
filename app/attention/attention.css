@@ -1,0 +1,139 @@
+.roller {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 23vw;
+}
+
+.at-title {
+    font-family: Impact;
+    font-size: 10vw;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .at-title {
+        font-size: 12vw;
+    }
+
+    .header {
+        height: 27vw;
+    }
+}
+
+@media (min-width: 1400px) {
+    .header {
+        width: 100%;
+        height: 300px;
+    }
+
+    .ab-title {
+        font-size: 140px;
+    }
+}
+
+.at_toppers {
+    padding-bottom: 20px;
+}
+
+.at-pc-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px
+}
+
+.at_main {
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.at_main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
+    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.at_main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent, #333 25%, #333 75%, transparent);
+    background-image: linear-gradient(to bottom, transparent, #333 25%, #333 75%, transparent);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.at_main::before,
+.at_main::after {
+    z-index: 1;
+}
+
+.el-money{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment{
+    align-items: center;
+}
+
+.yoyaku h1,
+.payment h1,
+.guide h1{
+    font-size: clamp(25px, 4.3vw, 33px);
+    color:#008dff;
+}
+
+.payment h2,
+.guide h2{
+    font-size: clamp(17px, 3.3vw, 23px);
+}
+
+.yoyaku p,
+.payment p,
+.guide p{
+    font-size: clamp(14px, 2vw, 18px);
+    margin-bottom: 1.5vh;
+}
+
+.payment,
+.guide{
+    margin-bottom: 1.5vh;
+}
+
+.clothes{
+    display: flex;
+}

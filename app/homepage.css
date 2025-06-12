@@ -1,0 +1,229 @@
+.body {
+    margin: 0;
+}
+
+.img,
+.svg {
+    display: block;
+}
+
+.img {
+    height: auto;
+    max-width: 100%;
+}
+
+.hidden-x-side {
+    overflow-x: hidden;
+}
+
+/** ヘッダーの共通デザイン **/
+
+.mid_header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    z-index: 5;
+}
+
+.headtop {
+    position: relative;
+    width: 100%;
+    top: 0;
+    margin-bottom: 20px;
+    min-height: 90dvh;
+    z-index: 5;
+}
+
+.headtop-leftarea {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.headtop-right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.headtop-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.headtop-themelogo {
+    position: absolute;
+    top: -3dvh;
+    left: 3vw;
+    width: 40%;
+    max-width: 600px;
+    height: auto;
+    z-index: 1;
+}
+
+.headtop-change {
+    position: absolute;
+    bottom: 0;
+    right: 3vw;
+    width: 35%;
+    max-width: 550px;
+    height: auto;
+    z-index: 1;
+}
+
+.headtop-sp {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width:767px) {
+    .headtop-themelogo {
+        left: 1vw;
+        width: 60%;
+    }
+
+    .headtop-change {
+        bottom: 1vh;
+        width: 25%;
+        max-width: 150px;
+    }
+}
+
+.payment-btn {
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    left: 3vw;
+    bottom: 5vh;
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border: 3px double #333;
+    border-radius: 9999px;
+    background-color: #ff0000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* 右側に「〉」を追加 */
+.payment-btn::after {
+    content: '〉';
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* ホバー時の背景色 */
+.payment-btn:hover {
+    background-color: #ec0000;
+}
+
+/* ホバー時に矢印を右にスライド */
+.payment-btn:hover::after {
+    transform: translateX(5px);
+}
+
+@media (min-width:768px) {
+    .payment-btn {
+        left: 5vw;
+        bottom: 8vh;
+        padding: 2rem 2rem;
+        font-size: 1.3rem;
+    }
+}
+
+.headerbox_top {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+}
+
+.headerbox_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 35px;
+    z-index: 5;
+    width: 25%;
+    height: 50%;
+    border-right: 4px #333333 solid;
+    border-top: 4px #333333 solid;
+}
+
+.headerbox_right {
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom-left-radius: 35px;
+    z-index: 5;
+    width: calc(75% + 4px);
+    height: 50%;
+    border-left: 4px #333333 solid;
+    border-bottom: 4px #333333 solid;
+}
+
+.headerbox_titlearea {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    height: 90%;
+    border-top-left-radius: 35px;
+}
+
+.headerbox_titlearea h1 {
+    font-size: clamp(35px, 8vw, 65px);
+    color: #fff;
+    font-family: Impact;
+}
+
+@media (min-width:768px) {
+    .headerbox_top {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 120px;
+        z-index: 2;
+    }
+}
+
+.headerbox_search {
+    background-color: #ff59d9;
+}
+
+.headerbox_news {
+    background-color: #00a5ff;
+}
+
+.headerbox_access {
+    background-color: #ffb700;
+}
+
+.headerbox_form {
+    background-color: #fc0000;
+}

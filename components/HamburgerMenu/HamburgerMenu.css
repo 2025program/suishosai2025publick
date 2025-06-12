@@ -1,0 +1,445 @@
+/* HamburgerMenu.css */
+
+.fusion-container {
+    overflow: clip;
+}
+
+.fusion-button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    text-align: right;
+    background-color: #FFEF37;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 60;
+}
+
+@media (max-width: 1500px) {
+    .fusion-button {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.fusion-button-inner {
+    position: relative;
+    top: 40px;
+    right: 40px;
+}
+
+@media (max-width: 1500px) {
+    .fusion-button-inner {
+        top: 32px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-button-inner {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+/* トグル状態時の変化 */
+.fusion-active.fusion-button .fusion-bar-top {
+    transform: translateY(12px);
+}
+
+@media (max-width: 1500px) {
+    .fusion-active.fusion-button .fusion-bar-top {
+        transform: translateY(8px);
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-active.fusion-button .fusion-bar-top {
+        transform: translateY(5px);
+    }
+}
+
+.fusion-active.fusion-button .fusion-bar-bottom {
+    transform: translateY(-12px);
+}
+
+@media (max-width: 1500px) {
+    .fusion-active.fusion-button .fusion-bar-bottom {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-active.fusion-button .fusion-bar-bottom {
+        transform: translateY(-5px);
+    }
+}
+
+.fusion-button span {
+    display: block;
+    height: 8px;
+    margin-left: auto;
+    background-color: #000000;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+    .fusion-button span {
+        height: 4px;
+    }
+}
+
+.fusion-button .fusion-bar-top {
+    width: 100px;
+}
+
+@media (max-width: 1500px) {
+    .fusion-button .fusion-bar-top {
+        width: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-button .fusion-bar-top {
+        width: 42px;
+    }
+}
+
+.fusion-button .fusion-bar-bottom {
+    width: 64px;
+    margin-top: 16px;
+}
+
+@media (max-width: 1500px) {
+    .fusion-button .fusion-bar-bottom {
+        width: 44px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    .fusion-button .fusion-bar-bottom {
+        width: 24px;
+        margin-top: 6px;
+    }
+}
+
+@keyframes out {
+    0% {
+        z-index: 58;
+    }
+
+    90% {
+        z-index: 49;
+    }
+
+    100% {
+        z-index: 49;
+    }
+}
+
+@keyframes in {
+    0% {
+        z-index: 49;
+    }
+
+    100% {
+        z-index: 58;
+    }
+}
+
+.fusion-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    animation: out 0.8s forwards;
+    z-index: 49;
+    pointer-events: none;
+    /* クリックをブロックしない */
+}
+
+.fusion-active.fusion-main {
+    z-index: 58;
+    animation: in 0.1s forwards;
+    pointer-events: auto;
+    /* アクティブ時はクリック可能 */
+}
+
+.fusion-main-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 49;
+}
+
+.fusion-left {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff56;
+    transform: translateY(-100%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.fusion-active.fusion-left {
+    transform: translateY(0);
+}
+
+.fusion-left::before,
+.fusion-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10.4%;
+    width: 3px;
+}
+
+@media (max-width: 767px) {
+
+    .fusion-left::before,
+    .fusion-left::after {
+        left: 22.4%;
+    }
+}
+
+/* いつか追加する
+
+.fusion-left::before {
+    height: 100%;
+    background-color: #000000;
+}
+
+.fusion-left::after {
+    height: 150px;
+    background-color: #FFEF37;
+}
+
+*/
+
+.fusion-logo {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .fusion-logo {
+        display: none;
+    }
+}
+
+.fusion-nav-title {
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    font-size: 10.4vw;
+    font-family: Impact;
+    -webkit-text-stroke: 2px #000000;
+    color: rgba(255, 255, 255, 0.441);
+}
+
+@media (max-width: 767px) {
+    .fusion-nav-title {
+        display: none;
+    }
+}
+
+.fusion-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+    background-color: #ffffff56;
+    /* 半透明の背景色 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 767px) {
+    .fusion-right {
+        flex: 4;
+    }
+}
+
+.fusion-right-inner {
+    width: 100%;
+}
+
+.fusion-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 21%;
+    background-color: #FFEF37;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.fusion-active.fusion-right {
+    transform: translateX(0);
+}
+
+.fusion-active.fusion-right .fusion-bg {
+    transform: scaleX(1);
+}
+
+.fusion-list {
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    list-style: none;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.fusion-item {
+    position: relative;
+    margin-top: 32px;
+}
+
+.fusion-item:first-of-type {
+    margin-top: 0;
+}
+
+.fusion-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    width: 24%;
+    height: 3px;
+    background-color: #222;
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fusion-item a {
+    display: block;
+    text-align: center;
+    font-family: Impact;
+    font-size: 4.2vw;
+    line-height: 1;
+}
+
+.fusion-item-expand {
+    margin-top: 32px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .fusion-item a {
+        font-size: 8.2vw;
+    }
+}
+
+.fusion-item:hover::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.fusion-bg-one {
+    top: 0%;
+    transition-delay: 0.28s;
+}
+
+.fusion-bg-two {
+    top: 20%;
+    transition-delay: 0.38s;
+}
+
+.fusion-bg-three {
+    top: 40%;
+    transition-delay: 0.48s;
+}
+
+.fusion-bg-four {
+    top: 60%;
+    transition-delay: 0.58s;
+}
+
+.fusion-bg-five {
+    top: 80%;
+    transition-delay: 0.68s;
+}
+
+/* ※ html, body などのグローバルスタイルは別途設定してください */
+/* 既存のスタイルはそのままで、以下を追加 */
+
+/* ドロップダウンメニューのスタイル */
+.fusion-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.fusion-dropdown.fusion-open {
+    max-height: 1000px;
+    /* サブメニューの高さに合わせて調整 */
+}
+
+/* ドロップダウン内の各項目 */
+.fusion-dropdown-item {
+    position: relative;
+    /* 疑似要素の位置基準にする */
+}
+
+.fusion-dropdown-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left center;
+    width: 24%;
+    height: 3px;
+    background-color: #222;
+    transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fusion-dropdown-item:hover::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+/* ドロップダウン内のリンクのスタイル（必要に応じて調整） */
+.fusion-dropdown-item a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 2.5vw;
+    padding-left: 15vw;
+    color: #232323;
+    font-weight: 600;
+}
+
+/* 画面サイズに応じた調整例 */
+@media (max-width: 767px) {
+    .fusion-dropdown-item a {
+        font-size: 5vw;
+        padding-left: 23vw;
+    }
+}

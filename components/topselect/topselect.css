@@ -1,0 +1,235 @@
+.topsearch {
+    width: 100%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.topsearch_event {
+    width: 100%;
+    height: 25vh;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bottom_search {
+    width: 100%;
+    height: 23vh;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom_grid {
+    width: 80%;
+    height: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+._search_top {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    max-width: 1000px;
+    width: 80%;
+}
+
+._search {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.search_button__inner {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+    display: block;
+    overflow: hidden;
+    color: #1F2937;
+    transition: all 300ms ease-out;
+    border: 2px solid #151515;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+._search:hover .search_button__inner,
+._search_top:hover .search_button__inner {
+    color: #ffffff;
+}
+
+.search_effect {
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin-bottom: -0.4rem;
+    margin-right: -0.5rem;
+    transition: all 200ms linear;
+    background-color: #151515;
+    border-radius: 0.5rem;
+}
+
+._search:hover .search_effect,
+._search_top:hover .search_effect {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.btn-slide-t {
+    position: absolute;
+    right: 0%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease;
+    transform-origin: bottom right;
+    transform: translateX(70%) translateY(0%);
+}
+
+.btn-slide {
+    position: absolute;
+    right: 0%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease;
+    transform-origin: bottom right;
+    transform: translateX(70%) translateY(0%);
+}
+
+.index-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 80px;
+    z-index: -1;
+}
+
+.index {
+    position: absolute;
+    width: 25px;
+    height: 80px;
+    clip-path: path('M25 0 L25 80 L0 65 L0 15 Z');
+    writing-mode: vertical-rl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+}
+
+/* 1つ目 */
+.index1 {
+    top: 0;
+    left: -20px;
+    background-color: #ff58d8;
+}
+
+/* 2つ目 */
+.index2 {
+    top: 6vh;
+    left: -20px;
+    background-color: #ff5733;
+}
+
+/* 3つ目 */
+.index3 {
+    top: 12vh;
+    left: -20px;
+    background-color: #ffb700;
+}
+
+._search:hover .btn-slide,
+._search_top:hover .btn-slide-t {
+    transform: translateX(0%) translateY(0%);
+}
+
+.btn-backer-blue {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #ff58d8;
+}
+
+
+.btn-backer-yellow {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #ff5733;
+}
+
+
+.btn-backer-red {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: #ffb700;
+}
+
+
+@media (min-height:800px) {
+    .index2 {
+        top: 60px;
+    }
+
+    .index3 {
+        top: 120px;
+    }
+
+}
+
+.top_search_text_b {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    font-size: clamp(17px, 4vw, 23px);
+    writing-mode: vertical-rl;
+    font-weight: bold;
+}
+
+.top_search_text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 15px;
+    position: relative;
+    font-size: clamp(20px, 4vw, 50px);
+    font-weight: bold;
+}
+
+
+.top__icon {
+    bottom: -5%;
+    right: -5%;
+    position: absolute;
+    opacity: 0.3;
+    width: 30%;
+    max-width: 250px;
+    height: auto;
+}
+
+@media (min-width:768px) {
+    .top_search_text_b {
+        margin-top: 20px;
+        margin-left: 15px;
+        font-size: clamp(20px, 3vw, 40px);
+        writing-mode: horizontal-tb;
+    }
+}
+
+/* これ作るの4日かかった */
