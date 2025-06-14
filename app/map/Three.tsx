@@ -267,7 +267,7 @@ export default function Three() {
                                     style={{
                                         transform: `scale(${1 - (activeFloor - floor) * 0.1})`,
                                         zIndex: floor,
-                                        opacity: floor === activeFloor ? 1 : 0.1,
+                                        opacity: floor === activeFloor ? 1 : 0.05,
                                         transition: "transform 0.3s ease, opacity 0.3s ease",
                                         position: "absolute",
                                         left: 0,
@@ -276,7 +276,7 @@ export default function Three() {
                                     }}
                                 >
                                     <Image
-                                        src={`/maps/map-floor${floor}.svg`}
+                                        src={`/maps/map${floor}.svg`}
                                         alt={`${floor}階`}
                                         fill
                                         className={styles.mapImage}
