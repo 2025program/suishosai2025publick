@@ -63,7 +63,7 @@ export default function attention() {
                         <h1>《お困りの時は》</h1>
                         <p>2棟1階生徒会室までお越しいただくか、巡回中の翠翔祭総務部またはSP部に声をかけてください。</p>
                         {/**総務Tと法被の画像を置く */}
-                        <div className="clothes">
+                        {/**<div className="clothes">
                             <div>
                                 <p>総務T</p>
                                 <Image
@@ -83,7 +83,7 @@ export default function attention() {
                                     height={1000}
                                 />
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
             </div>

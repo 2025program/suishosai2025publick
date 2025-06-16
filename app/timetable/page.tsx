@@ -1,6 +1,7 @@
 import { DevOnly } from "@/components/DevOnly";
 import Image from "next/image";
 import "./timetable.css";
+import ScheduleTable from "@/components/timetable/ScheduleTable";
 
 export default function Timetable() {
 
@@ -30,6 +31,9 @@ export default function Timetable() {
                     <header className="h-header">
                         <h1 className="h-title">TIMETABLE</h1>
                     </header>
+                </div>
+                <div>
+                    <ScheduleTable />
                 </div>
             </div>
         </DevOnly>
