@@ -182,7 +182,7 @@ const EventPage: React.FC = () => {
                                             <div className="pic">
                                                 <Image
                                                     className="piceve"
-                                                    src="/event/event.png"
+                                                    src={item?.img ? `/eventimg/${item.img}` : "/event/event.png"}
                                                     alt="画像を読み込めませんでした"
                                                     width={1000}
                                                     height={1000}
