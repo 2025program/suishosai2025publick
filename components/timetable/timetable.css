@@ -1,0 +1,63 @@
+/* timetable.css */
+
+.schedule-table-wrapper {
+  padding: 1rem;
+}
+
+/* タブ */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.tab-button {
+  padding: 0.5rem 1rem;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.tab-button.active {
+  background: #ddd;
+  font-weight: bold;
+}
+
+/* タイムテーブルグリッド */
+.timetable-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(2, 1fr);
+  border: 1px solid #ccc;
+}
+
+.timetable-header {
+  background: #f0f0f0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.time-col {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  background-color: #fafafa;
+}
+
+.grid-cell {
+  position: relative;
+  height: 100px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.event-box {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  background: #d9e2ec;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
