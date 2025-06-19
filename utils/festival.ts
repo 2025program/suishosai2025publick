@@ -46,7 +46,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 14, img: 'event_14.png', title: 'マッスルカフェ！', reading: "まっするかふぇ", attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-5", location: "屋外" },
     { id: 15, img: 'event_15.jpg', title: 'トイ・ニイベ・マニア！', reading: "とい・にいべ・まにあ", attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-6", location: "2-6" },
     { id: 16, img: 'event_16.jpg', title: '翠嵐クレープ～モリヤの翠イーツ屋さん～', reading: "すいらんくれーぷ～もりやのすいーつやさん～", attributes: [Sun, Soup], floor: 1, x: 111, y: 111, class: "2-7", location: "屋外" },
-    { id: 17, img: 'event_17.jpg', title: '翔涼祭', reading: "しょうりょうさい", attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-8", location: "2-7" },
+    { id: 17, img: 'event_17.jpg', title: '翔涼祭', reading: "しょうりょうさい", attributes: [Sun,Soup], floor: 1, x: 111, y: 111, class: "2-8", location: "2-7" },
     { id: 18, img: 'event_18.jpg', title: '末包の囁き', reading: "すえかねのささやき", attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-9", location: "2-9" },
     //3年
     { id: 19, img: 'event_19.jpg', title: 'スナダン・ジョーンズ～宝を隠す山～', reading: "すなだん・じょーんず～たからをかくすやま～", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-1,3-2", location: "多目的教室" },
@@ -55,7 +55,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 22, img: 'event_22.jpg', title: 'あつまれ！かとひろの森', reading: "あつまれ！かとひろのもり", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-6", location: "3-3" },
     { id: 23, img: 'event_23.jpg', title: 'コマーツ魔法学校', reading: "こまーつまほうがっこう", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-7", location: "3-5" },
     { id: 24, img: 'event_24.jpg', title: 'えじえじのはちみつのりハント', attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-8", location: "3-6" },
-    { id: 25, img: 'event_25.gif', title: 'DESCAFE Excella', reading: "ですかふぇ えくせら", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-9", location: "3-2" },
+    { id: 25, img: 'event_25.gif', title: 'DESCAFE Excella', reading: "ですかふぇ えくせら", attributes: [Sun,Soup], floor: 1, x: 111, y: 111, class: "3-9", location: "3-2" },
     //部活・委員会・有志 
     { id: 26, img: 'event_26.gif', title: '圧倒的IT研究部', reading: "あっとうてきあいてぃーけんきゅうぶ", attributes: [Sun], floor: 1, x: 111, y: 111, class: "IT研究部", location: "コンピュータ室" },
     { id: 27, img: 'event_27.jpg', title: '横浜翠嵐高校 校歌うたうま選手権in翠翔祭', reading: "よこはますいらんこうこう こうかうたうませんしゅけん", attributes: [Sun], floor: 1, x: 111, y: 111, class: "SHBC", location: "1-1" },

@@ -54,3 +54,7 @@
 .warning-close:hover {
     border: 2px #000000 solid;
 }
+
+.gaku{
+    font-size: clamp(15px, 2vw, 20px);
+}

@@ -55,6 +55,7 @@ const WarningPopupCookie = () => {
             <div className="warning-box">
                 <div className='warning-title'>
                     <span className='warning-text'>現金での支払いはできません</span>
+                    <p className='gaku'>※学食は現金のみ利用できます</p>
                 </div>
                 <Image
                     className="cash"

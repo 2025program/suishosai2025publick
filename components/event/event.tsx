@@ -23,7 +23,7 @@ import { Button } from '../ui/button';
 // 固定の属性候補（フィルター表示用）
 const fixedAttributes: { icon: LucideIcon; title: string }[] = [
     { icon: Sun, title: "全日制" },
-    { icon: Soup, title: "食品販売" },
+    { icon: Soup, title: "調理食品" },
     { icon: Drum, title: "ステージ" },
     { icon: Moon, title: "定時制" },
 ];
