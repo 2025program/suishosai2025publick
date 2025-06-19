@@ -55,7 +55,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 22, img: 'event_22.jpg', title: 'あつまれ！かとひろの森', reading: "あつまれ！かとひろのもり", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-6", location: "3-3" },
     { id: 23, img: 'event_23.jpg', title: 'コマーツ魔法学校', reading: "こまーつまほうがっこう", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-7", location: "3-5" },
     { id: 24, img: 'event_24.jpg', title: 'えじえじのはちみつのりハント', attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-8", location: "3-6" },
-    { id: 25, img: '', title: 'DESCAFE Excella', reading: "ですかふぇ えくせら", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-9", location: "3-2" },
+    { id: 25, img: 'event_25.gif', title: 'DESCAFE Excella', reading: "ですかふぇ えくせら", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-9", location: "3-2" },
     //部活・委員会・有志 
     { id: 26, img: 'event_26.gif', title: '圧倒的IT研究部', reading: "あっとうてきあいてぃーけんきゅうぶ", attributes: [Sun], floor: 1, x: 111, y: 111, class: "IT研究部", location: "コンピュータ室" },
     { id: 27, img: 'event_27.jpg', title: '横浜翠嵐高校 校歌うたうま選手権in翠翔祭', reading: "よこはますいらんこうこう こうかうたうませんしゅけん", attributes: [Sun], floor: 1, x: 111, y: 111, class: "SHBC", location: "1-1" },
