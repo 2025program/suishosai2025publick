@@ -8,8 +8,8 @@ import { FestivalItem, festivalItems } from "@/utils/festival";
 import Image from "next/image";
 
 // 基準解像度（最大サイズ：1290×967px、アスペクト比 4:3）
-const BASE_WIDTH = 1290;
-const BASE_HEIGHT = 967; // 1290 * 0.75 ≒ 967
+const BASE_WIDTH = 1000;
+const BASE_HEIGHT = 749; // 1290 * 0.75 ≒ 967
 
 
 /**
