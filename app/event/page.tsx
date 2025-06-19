@@ -4,10 +4,8 @@ import { DevOnly } from '@/components/DevOnly';
 
 const EventPage: React.FC = () => {
     return (
-        <Suspense fallback={<div>読み込み中...</div>}>
-            <DevOnly>
-                <ClientEventPage />
-            </DevOnly>
+        <Suspense fallback={<div>読み込み中...</div>}>   
+            <ClientEventPage />   
         </Suspense>
     );
 };
