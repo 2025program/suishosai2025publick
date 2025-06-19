@@ -276,7 +276,7 @@ export default function Three() {
                                     }}
                                 >
                                     <Image
-                                        src={`/maps/map${floor}.svg`}
+                                        src={`/maps/map_${floor}.svg`}
                                         alt={`${floor}階`}
                                         fill
                                         className={styles.mapImage}
