@@ -111,8 +111,8 @@
 /* デスクトップ：1290×967px */
 @media (min-width: 1290px) {
     .mapContainer {
-        width: 1290px;
-        height: 967px;
+        width: 1000px;
+        height: 749px;
     }
 }
 
@@ -120,7 +120,7 @@
 @media (max-width: 1289px) and (min-width: 950px) {
     .mapContainer {
         width: 880px;
-        height: 660px;
+        height: 659px;
     }
 }
 
@@ -128,7 +128,7 @@
 @media (max-width: 949px) and (min-width: 630px) {
     .mapContainer {
         width: 620px;
-        height: 465px;
+        height: 464px;
     }
 }
 
