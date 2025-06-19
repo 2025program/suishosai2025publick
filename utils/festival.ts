@@ -50,7 +50,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 18, img: 'event_18.jpg', title: '末包の囁き', reading: "すえかねのささやき", attributes: [Sun], floor: 1, x: 111, y: 111, class: "2-9", location: "2-9" },
     //3年
     { id: 19, img: 'event_19.jpg', title: 'スナダン・ジョーンズ～宝を隠す山～', reading: "すなだん・じょーんず～たからをかくすやま～", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-1,3-2", location: "多目的教室" },
-    { id: 20, img: 'event_20.jpg', title: '新世紀翠嵐シューティングコースター～翠嵐全授業数学化計画～', reading: "しんせいきすいらんしゅーてぃんぐこーすたー～すいらんぜんじゅぎょうすうがくかけいかく～", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-3,3-5", location: "みらい館" },
+    { id: 20, img: 'event_20.jpg', title: '新世紀翠嵐シューティングコースター～全授業数学化計画～', reading: "しんせいきすいらんしゅーてぃんぐこーすたー～すいらんぜんじゅぎょうすうがくかけいかく～", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-3,3-5", location: "みらい館" },
     { id: 21, img: 'event_21.jpg', title: 'MOMI of Terror', reading: "もみおふてらー", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-4", location: "3-4" },
     { id: 22, img: 'event_22.jpg', title: 'あつまれ！かとひろの森', reading: "あつまれ！かとひろのもり", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-6", location: "3-3" },
     { id: 23, img: 'event_23.jpg', title: 'コマーツ魔法学校', reading: "こまーつまほうがっこう", attributes: [Sun], floor: 1, x: 111, y: 111, class: "3-7", location: "3-5" },
