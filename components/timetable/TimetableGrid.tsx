@@ -1,7 +1,13 @@
 import React from "react";
 import "./timetable.css"; 
+import { FestivalDetail } from "@/utils/festivaldetail"; 
+type Props = {
+  venues: Record<VenueType, Event[]>;
+  onSelectEvent?: (id: number) => void;
+};
 
 type Event = {
+  id: number;
   title: string;
   start: number;
   end: number;
@@ -9,11 +15,7 @@ type Event = {
 
 type VenueType = "体育館" | "野外";
 
-type Props = {
-  venues: Record<VenueType, Event[]>;
-};
-
-export default function TimetableGrid({ venues }: Props) {
+export default function TimetableGrid({ venues, onSelectEvent }: Props) {
   const hours = Array.from({ length: 7 }, (_, i) => 9 + i); // 9時〜15時
 
   return (
@@ -36,9 +38,10 @@ export default function TimetableGrid({ venues }: Props) {
                   const height = (event.end - event.start) * 100;
                   return (
                     <div
-                      key={idx}
+                      key={event.id}
                       className="event-box"
                       style={{ top: `${offset}%`, height: `${height}%` }}
+                      onClick={() => onSelectEvent?.(event.id)}
                     >
                       {event.title}
                     </div>

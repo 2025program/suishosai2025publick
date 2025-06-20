@@ -1,5 +1,4 @@
-/* timetable.css */
-
+/*TimetableGridのほう*/
 .schedule-table-wrapper {
   padding: 1rem;
 }
@@ -25,7 +24,7 @@
 .timetable-grid {
   display: grid;
   grid-template-columns: 100px repeat(2, 1fr);
-  border: 1px solid #ccc;
+  border: none;
 }
 
 .timetable-header {
@@ -39,7 +38,7 @@
 
 .time-col {
   text-align: center;
-  border: 1px solid #ccc;
+  border: none;
   padding: 0.5rem;
   background-color: #fafafa;
   border-right: 1px solid #ccc;
@@ -48,19 +47,43 @@
 .grid-cell {
   position: relative;
   height: 100px;
-  border: 1px solid #ccc;
-  background-color: #fff;
   border: none;
+  background-color: #fff;
+  border-right: none;
+  border-right: none;
 }
 
 .event-box {
   position: absolute;
   left: 4px;
   right: 4px;
-  background: #d9e2ec;
+  background: #00a5ff;
   border-radius: 4px;
   font-size: 0.75rem;
   padding: 0.25rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   text-align: center;
+}
+
+
+/*ScheduleTableのほう */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
