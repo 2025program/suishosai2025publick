@@ -5,9 +5,10 @@ import { useSearchParams } from "next/navigation";
 import styles from "./Map.module.css";
 import { normalizeSearchString } from "@/utils/normalizeKana";
 import { FestivalItem, festivalItems } from "@/utils/festival";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-// 基準解像度（最大サイズ：1290×967px、アスペクト比 4:3）
+// 基準解像度（最大サイズ：1000×749px）
 const BASE_WIDTH = 1000;
 const BASE_HEIGHT = 749;
 
@@ -49,7 +50,6 @@ const Pin: React.FC<PinProps> = ({
     item,
     isSelected,
     containerWidth,
-    containerHeight,
 }) => {
     if (!isSelected) return null;
     const scaleFactor = containerWidth / BASE_WIDTH;
@@ -111,36 +111,61 @@ const floors = [1, 2, 3, 4];
 
 export default function Three() {
     const searchParams = useSearchParams();
+    const router = useRouter();
 
     const [activeFloor, setActiveFloor] = useState<number>(1);
     const [searchQuery, setSearchQuery] = useState<string>("");
     const [selectedItem, setSelectedItem] = useState<FestivalItem | null>(null);
     const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     const normalizedSearchQuery = normalizeSearchString(searchQuery);
+
     const suggestions = searchQuery
-        ? festivalItems.filter((item) =>
-            normalizeSearchString(item.title, item.reading).includes(
-                normalizedSearchQuery
-            )
-        )
+        ? festivalItems.filter((item) => {
+            const normalizedTitle = normalizeSearchString(item.title);
+            const normalizedReading = item.reading ? normalizeSearchString(item.reading) : "";
+            const normalizedClass = item.class ? normalizeSearchString(item.class) : "";
+
+            return (
+                normalizedTitle.includes(normalizedSearchQuery) ||
+                normalizedReading.includes(normalizedSearchQuery) ||
+                normalizedClass.includes(normalizedSearchQuery)
+            );
+        })
         : [];
 
     // URLのクエリパラメータ "id" をチェックし、あれば対象のイベントを選択し、検索ボックスに反映
     useEffect(() => {
         const id = searchParams.get("id");
-        if (id) {
+
+        if (id !== null && id !== "") {
             const decodedId = decodeURIComponent(id);
             const foundEvent = festivalItems.find(
                 (item) => item.title === decodedId
             );
             if (foundEvent) {
                 setSelectedItem(foundEvent);
+                setSearchQuery(foundEvent.title);
                 setActiveFloor(foundEvent.floor!);
-                setSearchQuery(foundEvent.title); // 検索ボックスに反映
+            } else {
+                setSelectedItem(null);
+                setSearchQuery("");
             }
+        } else {
+            setSelectedItem(null);
+            setSearchQuery("");
         }
-    }, [searchParams]);
+
+        // 初期化完了フラグをON
+        setIsInitialized(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isInitialized) return;
+
+        router.push(`?id=${encodeURIComponent(searchQuery)}`, { scroll: false });
+    }, [searchQuery, isInitialized]);
 
     // マップコンテナの ref（CSS で各ブレークポイントごとに固定ピクセル指定）
     const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -177,16 +202,23 @@ export default function Three() {
 
             {/* サーチボックス */}
             <div className={styles.header}>
-                <input
-                    type="text"
-                    placeholder="イベント検索"
-                    value={searchQuery}
-                    onChange={(e) => {
-                        setSearchQuery(e.target.value);
-                        setShowSuggestions(true);
-                    }}
-                    className={styles.searchInput}
-                />
+                <div className={styles.Esearch}>
+                    <input
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => {
+                            setSearchQuery(e.target.value);
+                            setShowSuggestions(true);
+                        }}
+                        className={styles.searchInput}
+                        placeholder="イベントを検索..."
+                    />
+                    {searchQuery && (
+                        <button className={styles.Eclear} onClick={() => setSearchQuery('')}>
+                            ×
+                        </button>
+                    )}
+                </div>
                 {showSuggestions && suggestions.length > 0 && (
                     <div className={styles.suggestionList}>
                         {suggestions.map((item, index) => (
@@ -200,7 +232,8 @@ export default function Three() {
                                     setShowSuggestions(false);
                                 }}
                             >
-                                {item.title}
+                                <div className={styles.suggestionClass}>{item.class}</div>
+                                <div className={styles.suggestionTitle}>{item.title}</div>
                             </div>
                         ))}
                     </div>
@@ -230,26 +263,6 @@ export default function Three() {
                             {floor}階
                         </button>
                     ))}
-                </div>
-            </div>
-
-            {/* マップ説明 */}
-            <div className={styles.mapex}>
-                <div className={styles.exfloor}>
-                    <div className={styles.exname}>階段</div>
-                    <div className={styles.excolor1}></div>
-                </div>
-                <div className={styles.exfloor}>
-                    <div className={styles.exname}>男子トイレ</div>
-                    <div className={styles.excolor2}></div>
-                </div>
-                <div className={styles.exfloor}>
-                    <div className={styles.exname}>女子トイレ</div>
-                    <div className={styles.excolor3}></div>
-                </div>
-                <div className={styles.exfloor}>
-                    <div className={styles.exname}>多目的トイレ</div>
-                    <div className={styles.excolor4}></div>
                 </div>
             </div>
 
