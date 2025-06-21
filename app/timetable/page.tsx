@@ -2,6 +2,7 @@ import { DevOnly } from "@/components/DevOnly";
 import Image from "next/image";
 import "./timetable.css";
 import ScheduleTable from "@/components/timetable/ScheduleTable";
+import Footer from "@/components/footer/footer";
 
 export default function Timetable() {
 
@@ -36,6 +37,7 @@ export default function Timetable() {
                     <ScheduleTable />
                 </div>
             </div>
+            <Footer></Footer>
         </DevOnly>
     );
 }

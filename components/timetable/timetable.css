@@ -1,25 +1,4 @@
 /*TimetableGridのほう*/
-.schedule-table-wrapper {
-  padding: 1rem;
-}
-
-/* タブ */
-.tabs {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.tab-button {
-  padding: 0.5rem 1rem;
-  background: #eee;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-.tab-button.active {
-  background: #ddd;
-  font-weight: bold;
-}
-
 /* タイムテーブルグリッド */
 .timetable-grid {
   display: grid;
@@ -53,11 +32,11 @@
   border-right: none;
 }
 
+/*　イベントボックス関連*/
 .event-box {
   position: absolute;
   left: 4px;
   right: 4px;
-  background: #00a5ff;
   border-radius: 4px;
   font-size: 0.75rem;
   padding: 0.25rem;
@@ -65,8 +44,55 @@
   text-align: center;
 }
 
+.event-box.gym {
+  background-color: #ffe8ad;
+  border: 1px solid #ffb700;
+}
+
+.event-box.outdoor {
+  background-color: #ffb0ed;
+  border: 1px solid #ff59d9;
+}
+
+.event-box.gym:hover {
+  background-color: #ffb700;
+}
+
+.event-box.outdoor:hover {
+  background-color: #ff59d9;
+}
+
 
 /*ScheduleTableのほう */
+.schedule-table-wrapper {
+  padding: 1rem;
+}
+
+/* タブ */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  background: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tab-button:hover{
+  background: #ddd;
+}
+
+.tab-button.active {
+  background: #ddd;
+  font-weight: bold;
+}
+
+/**　モーダル（出てくるやつ）*/
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -86,4 +112,8 @@
   border-radius: 8px;
   max-width: 500px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.detail{
+  font-size: 20px;
 }

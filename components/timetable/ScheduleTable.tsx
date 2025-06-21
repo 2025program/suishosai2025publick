@@ -3,8 +3,16 @@
 import React, { useState } from "react";
 import TimetableGrid from "./TimetableGrid";
 import "./timetable.css";
-import { festivalDetail, FestivalDetail } from "@/utils/festivaldetail"; 
+import { festivalDetail, FestivalDetail } from "@/utils/festivaldetail";
+import { Button } from '../ui/button'; 
+import { Item } from "@radix-ui/react-accordion";
 const detailMap = Object.fromEntries(festivalDetail.map(d => [d.id, d.detail]));
+function formatTime(decimalHour: number): string {
+  const hour = Math.floor(decimalHour);
+  const minute = Math.round((decimalHour - hour) * 60);
+  const pad = (n: number) => n.toString().padStart(2, "0");
+  return `${pad(hour)}:${pad(minute)}`;
+}
 
 export default function ScheduleTable() {
   const [activeDay, setActiveDay] = useState(0);
@@ -51,6 +59,12 @@ export default function ScheduleTable() {
     },
   ];
 
+  const activeEvents = timetable[activeDay].venues;
+  const allEvents = [...activeEvents["体育館"], ...activeEvents["野外"]];
+  const selectedEvent = allEvents.find((e) => e.id === selectedEventId);
+  const detailText = festivalDetail.find((d) => d.id === selectedEventId)?.detail;
+
+
   return (
     <div className="schedule-table-wrapper">
       {/* タブボタン */}
@@ -66,6 +80,8 @@ export default function ScheduleTable() {
         ))}
       </div>
 
+      <p>タップして時間と詳細を表示</p>
+
       {/* 時間割グリッド */}
       <TimetableGrid
         venues={timetable[activeDay].venues}
@@ -73,17 +89,19 @@ export default function ScheduleTable() {
       />
 
       {/* モーダル表示 */}
-      {selectedEventId !== null && (
+      {selectedEventId !== null && selectedEvent && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2>詳細</h2>
+            <h2 className="detail">イベント詳細</h2>
+            <p>時間：{formatTime(selectedEvent.start)} - {formatTime(selectedEvent.end)}</p>
+            <p>詳細：{detailText || "詳細情報が見つかりません。"}</p>
             <p>
               {
                 festivalDetail.find(d => d.id === selectedEventId)?.detail
                 || "詳細情報が見つかりません。"
               }
             </p>
-            <button onClick={closeModal}>閉じる</button>
+            <Button onClick={closeModal}>閉じる</Button>
           </div>
         </div>
       )}
