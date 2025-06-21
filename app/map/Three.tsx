@@ -307,6 +307,15 @@ export default function Three() {
                     </div>
                 </div>
             </div>
+            <div className={styles.expMap}>
+                <div className={styles.expMapExp}>
+                    -マップの見方-
+                </div>
+                <div className={styles.expBox}>
+                    <div className={styles.expClass}>0-0 (場所)</div>
+                    <div className={styles.expTitle}>0-0 (団体)</div>
+                </div>
+            </div>
         </div>
     );
 }

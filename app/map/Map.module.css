@@ -257,3 +257,36 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.expMap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.expMapExp {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.expBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #373737 2px solid;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.expClass {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.expTitle {
+    font-size: 17px;
+    font-weight: bold
+}
