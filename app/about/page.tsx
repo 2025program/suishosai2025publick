@@ -103,7 +103,7 @@ export default function About() {
                         <h3>-サイト監修-</h3>
                         <p>水谷駿佑</p>
                         <h3>-システム・設計-</h3>
-                        <p>pent</p>
+                        <p>長谷川稜介</p>
                         <h3>-ロゴ制作-</h3>
                         <p>菊池真帆</p>
 
