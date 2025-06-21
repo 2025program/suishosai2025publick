@@ -1,9 +1,19 @@
 /*TimetableGridのほう*/
-/* タイムテーブルグリッド */
 .timetable-grid {
   display: grid;
-  grid-template-columns: 100px repeat(2, 1fr);
-  border: none;
+}
+
+/* スマホ用に幅変更 */
+@media screen and (max-width: 767px) {
+  .timetable-grid {
+    grid-template-columns: 50px 1fr 1fr; /* 左50px、右の列を拡大 */
+  }
+}
+
+.venue-column {
+  background-color: #fff;
+  border-left: 1px solid #ccc;
+  position: relative;
 }
 
 .timetable-header {
@@ -21,15 +31,33 @@
   padding: 0.5rem;
   background-color: #fafafa;
   border-right: 1px solid #ccc;
+  height: 180px;
+  width: 80px;
+  min-width: 80px;
+  font-weight: bold;
+  text-align: right;
+  position: relative;
+  top: -100px;
+}
+
+/* 📱スマホ（767px以下） */
+@media screen and (max-width: 767px) {
+  .time-col {
+    width: 40px;
+    min-width: 50px;
+    font-size: 12px;
+    padding-right: 4px;
+  }
 }
 
 .grid-cell {
   position: relative;
-  height: 100px;
+  height: 180px;
   border: none;
   background-color: #fff;
   border-right: none;
   border-right: none;
+  width: calc(50% - xxpx);
 }
 
 /*　イベントボックス関連*/
@@ -38,9 +66,10 @@
   left: 4px;
   right: 4px;
   border-radius: 4px;
+  padding: 4px;
   font-size: 0.75rem;
-  padding: 0.25rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
   text-align: center;
 }
 
@@ -61,6 +90,16 @@
 .event-box.outdoor:hover {
   background-color: #ff59d9;
 }
+
+.venue-column,
+.grid-cell {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+
 
 
 /*ScheduleTableのほう */

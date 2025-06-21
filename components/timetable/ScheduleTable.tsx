@@ -5,7 +5,16 @@ import TimetableGrid from "./TimetableGrid";
 import "./timetable.css";
 import { festivalDetail, FestivalDetail } from "@/utils/festivaldetail";
 import { Button } from '../ui/button'; 
-import { Item } from "@radix-ui/react-accordion";
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerClose
+} from "@/components/ui/drawer";
 const detailMap = Object.fromEntries(festivalDetail.map(d => [d.id, d.detail]));
 function formatTime(decimalHour: number): string {
   const hour = Math.floor(decimalHour);
@@ -28,7 +37,7 @@ export default function ScheduleTable() {
           { id: 69, title: "スイラン・ブラバン・ビッグバン", start: 9.67, end: 10.17 },
           { id: 70, title: "弦楽部", start: 10.67, end: 11.17 },
           { id: 71, title: "書道部", start: 11.67, end: 12 },
-          { id: 72, title: "ダンス部", start: 13, end: 14.75 },
+          { id: 72, title: "ダンス部", start: 13, end: 13.75 },
           { id: 73, title: "音楽部", start: 14.33, end: 14.75 },
         ],
         野外: [
@@ -67,6 +76,7 @@ export default function ScheduleTable() {
 
   return (
     <div className="schedule-table-wrapper">
+      <p>イベントをタップして時間と詳細を表示</p>
       {/* タブボタン */}
       <div className="tabs">
         {timetable.map((t, i) => (
@@ -80,8 +90,6 @@ export default function ScheduleTable() {
         ))}
       </div>
 
-      <p>タップして時間と詳細を表示</p>
-
       {/* 時間割グリッド */}
       <TimetableGrid
         venues={timetable[activeDay].venues}
@@ -90,20 +98,22 @@ export default function ScheduleTable() {
 
       {/* モーダル表示 */}
       {selectedEventId !== null && selectedEvent && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <h2 className="detail">イベント詳細</h2>
-            <p>時間：{formatTime(selectedEvent.start)} - {formatTime(selectedEvent.end)}</p>
-            <p>詳細：{detailText || "詳細情報が見つかりません。"}</p>
-            <p>
-              {
-                festivalDetail.find(d => d.id === selectedEventId)?.detail
-                || "詳細情報が見つかりません。"
-              }
-            </p>
-            <Button onClick={closeModal}>閉じる</Button>
-          </div>
-        </div>
+        <Drawer open={true} onOpenChange={(open) => !open && closeModal()}>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>イベント詳細</DrawerTitle>
+            </DrawerHeader>
+            <div className="px-4 py-2">
+              <p>時間：{formatTime(selectedEvent.start)} - {formatTime(selectedEvent.end)}</p>
+              <p>詳細：{detailText || "詳細情報が見つかりません。"}</p>
+            </div>
+            <DrawerFooter>
+              <DrawerClose asChild>
+                <Button onClick={closeModal}>閉じる</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       )}
     </div>
   );

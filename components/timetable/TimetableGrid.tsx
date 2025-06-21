@@ -22,52 +22,80 @@ type Event = {
 type VenueType = "体育館" | "野外";
 
 export default function TimetableGrid({ venues, onSelectEvent }: Props) {
-  const hours = Array.from({ length: 7 }, (_, i) => 9 + i); // 9時〜15時
+  const hours = Array.from({ length: 7 }, (_, i) => 9 + i); // 9〜15時
+  const hourHeight = 180;
+  const totalHeight = hourHeight * hours.length; // 1260
 
   return (
-    <div className="timetable-grid">
-      {/* ヘッダー */}
-      <div className="timetable-header time-col">時間</div>
-      {["体育館", "野外"].map((venue) => (
-        <div key={venue} className="timetable-header">
-          {venue}
-        </div>
-      ))}
+    <div
+      className="timetable-grid"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "80px 1fr 1fr",
+      }}
+    >
+      {/* 時間軸の時間ラベル列 */}
+      <div>
+        {hours.map((hour) => (
+          <div
+            key={hour}
+            className="time-col"
+            style={{ height: `${hourHeight}px`, lineHeight: `${hourHeight}px` }}
+          >
+            {hour}:00
+          </div>
+        ))}
+      </div>
 
-      {/* 各時間帯の横線 + イベント配置枠 */}
-      {hours.map((hour) => (
-        <React.Fragment key={hour}>
-          <div className="time-col">{hour}:00</div>
-          {["体育館", "野外"].map((venue) => (
-            <div key={venue} className="grid-cell">
-              {venues[venue as VenueType].map((event) => {
-                // 時間がこの時間帯に属しているイベントだけ表示
-                if (event.start >= hour && event.start < hour + 1) {
-                  const offset = (event.start - hour) * 100;
-                  const height = (event.end - event.start) * 100;
-                  const venueClass = venue === "体育館" ? "gym" : "outdoor";
+      {/* 体育館のイベント列 */}
+      <div
+        className="venue-column gym"
+        style={{ position: "relative", height: `${totalHeight}px` }}
+      >
+        {venues["体育館"].map((event) => {
+          const top = (event.start - 9) * hourHeight;
+          const height = (event.end - event.start) * hourHeight;
 
-                  return (
-                    <div
-                      key={event.id}
-                      className={`event-box ${venueClass}`}
-                      style={{
-                        top: `${offset}%`,
-                        height: `${height}%`,
-                        position: "absolute",
-                      }}
-                      onClick={() => onSelectEvent?.(event.id)}
-                    >
-                      {event.title}
-                    </div>
-                  );
-                }
-                return null;
-              })}
+          return (
+            <div
+              key={event.id}
+              className="event-box gym"
+              style={{ top: `${top}px`, height: `${height}px`, position: "absolute" }}
+              onClick={() => onSelectEvent?.(event.id)}
+            >
+              <div>{event.title}</div>
+              <div className="event-time">
+                {formatTime(event.start)} - {formatTime(event.end)}
+              </div>
             </div>
-          ))}
-        </React.Fragment>
-      ))}
+          );
+        })}
+      </div>
+
+      {/* 野外のイベント列 */}
+      <div
+        className="venue-column outdoor"
+        style={{ position: "relative", height: `${totalHeight}px` }}
+      >
+        {venues["野外"].map((event) => {
+          const top = (event.start - 9) * hourHeight;
+          const height = (event.end - event.start) * hourHeight;
+
+          return (
+            <div
+              key={event.id}
+              className="event-box outdoor"
+              style={{ top: `${top}px`, height: `${height}px`, position: "absolute" }}
+              onClick={() => onSelectEvent?.(event.id)}
+            >
+              <div>{event.title}</div>
+              <div className="event-time">
+                {formatTime(event.start)} - {formatTime(event.end)}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
