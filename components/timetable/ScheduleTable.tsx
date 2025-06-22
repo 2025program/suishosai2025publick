@@ -57,7 +57,7 @@ export default function ScheduleTable() {
           { id: 74, title: "朝鮮学校舞踊部", start: 11.67, end: 12 },
           { id: 64, title: "多文化共生", start: 12.17, end: 12.5 },
           { id: 73, title: "音楽部", start: 13, end: 13.42 },
-          { id: 69, title: "ブラバン・ビッグバン", start: 13.67, end: 14.17 },
+          { id: 69, title: "スイラン・ブラバン・ビッグバン", start: 13.67, end: 14.17 },
         ],
         野外: [
           { id: 67, title: "すぱげてぃ", start: 10.5, end: 11 },

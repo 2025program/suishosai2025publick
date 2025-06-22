@@ -28,14 +28,9 @@ export default function TimetableGrid({ venues, onSelectEvent }: Props) {
 
   return (
     <div
-      className="timetable-grid"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "80px 1fr 1fr",
-      }}
-    >
+      className="timetable-grid">
       {/* 時間軸の時間ラベル列 */}
-      <div>
+      {/*<div>    表の都合で時間がどうしてもずれてしまうので没
         {hours.map((hour) => (
           <div
             key={hour}
@@ -45,13 +40,14 @@ export default function TimetableGrid({ venues, onSelectEvent }: Props) {
             {hour}:00
           </div>
         ))}
-      </div>
+      </div>*/}
 
       {/* 体育館のイベント列 */}
       <div
         className="venue-column gym"
         style={{ position: "relative", height: `${totalHeight}px` }}
       >
+        <div className="venue-header">体育館ステージ</div>
         {venues["体育館"].map((event) => {
           const top = (event.start - 9) * hourHeight;
           const height = (event.end - event.start) * hourHeight;
@@ -77,6 +73,7 @@ export default function TimetableGrid({ venues, onSelectEvent }: Props) {
         className="venue-column outdoor"
         style={{ position: "relative", height: `${totalHeight}px` }}
       >
+        <div className="venue-header">野外ステージ</div>
         {venues["野外"].map((event) => {
           const top = (event.start - 9) * hourHeight;
           const height = (event.end - event.start) * hourHeight;

@@ -1,32 +1,34 @@
 /*TimetableGridのほう*/
 .timetable-grid {
   display: grid;
+  grid-template-columns: 1fr 1fr; /*時間を入れる場合頭に??pxを入れる*/
 }
 
-/* スマホ用に幅変更 */
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
   .timetable-grid {
-    grid-template-columns: 50px 1fr 1fr; /* 左50px、右の列を拡大 */
+    grid-template-columns: 1fr 1fr; 時間を入れる場合頭に??pxを入れる
   }
-}
+}  */
 
 .venue-column {
   background-color: #fff;
-  border-left: 1px solid #ccc;
+  border: none;
   position: relative;
 }
 
-.timetable-header {
-  background: #f0f0f0;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  text-align: center;
+.venue-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
   font-weight: bold;
-  border: none;
+  text-align: center;
+  z-index: 10; 
 }
 
-.time-col {
-  text-align: center;
+/*.time-col {
+  text-align: left;
   border: none;
   padding: 0.5rem;
   background-color: #fafafa;
@@ -37,13 +39,11 @@
   font-weight: bold;
   text-align: right;
   position: relative;
-  top: -100px;
-}
+  top: -100px;  これくらい上に動かすとうまく表示できるが、はみ出てしまう
+}  */
 
-/* 📱スマホ（767px以下） */
 @media screen and (max-width: 767px) {
   .time-col {
-    width: 40px;
     min-width: 50px;
     font-size: 12px;
     padding-right: 4px;
@@ -52,6 +52,7 @@
 
 .grid-cell {
   position: relative;
+  padding: 0;
   height: 180px;
   border: none;
   background-color: #fff;
@@ -71,6 +72,8 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   cursor: pointer;
   text-align: center;
+  top: '${offset}%';
+  height: '${height}%';
 }
 
 .event-box.gym {
@@ -112,6 +115,7 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  position: sticky;
 }
 
 .tab-button {
