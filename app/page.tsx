@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import "./homepage.css"
 import Form from '@/components/form/form';
+import Gresult from '@/components/result/result';
 import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Footer from '@/components/footer/footer';
 import { DevOnly } from '@/components/DevOnly';
+import { Result } from 'postcss';
 
 
 // Homeコンポーネント
@@ -101,9 +103,10 @@ export default function Home() {
                 <h1 className=''>FORM</h1>
               </div>
             </div>
-            <DevOnly>
-              <Form />
-            </DevOnly>
+            
+            <Form />
+            {/*<Gresult></Gresult>*/}   {/*どっちかのみ使用 */}
+
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>

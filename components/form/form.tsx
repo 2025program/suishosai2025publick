@@ -35,7 +35,7 @@ export default function Form() {
                                 </a>
                             </div>
                             <div className="bumonsbox">
-                                <h4 className="bumons">調理食品部門</h4>
+                                <h4 className="bumons">調理食販部門</h4>
                                 <a href="https://docs.google.com/forms/d/1KXE1577SNQ5Bpc9YA87fDQfD28HfViVTo0uArde2VGk/edit?usp=drivesdk" className="relative inline-block text-lg group">
                                     <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
                                         <span className="absolute inset-0 w-full h-full px-5 py-2 rounded-lg bg-gray-50"></span>
