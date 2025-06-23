@@ -5,8 +5,6 @@ import Gresult from '@/components/result/result';
 import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
-import Footer from '@/components/footer/footer';
-import { DevOnly } from '@/components/DevOnly';
 import { Result } from 'postcss';
 
 
@@ -103,7 +101,7 @@ export default function Home() {
                 <h1 className=''>FORM</h1>
               </div>
             </div>
-            
+
             <Form />
             {/*<Gresult></Gresult>*/}   {/*どっちかのみ使用 */}
 
@@ -124,7 +122,6 @@ export default function Home() {
             </div>
             <Access />
           </div>
-          <Footer />
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import { Noto_Sans_JP } from "next/font/google";
 //import { CookieConsent } from "@/components/CookieConsent";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
 import WarningPopupCookie from "@/components/warning/WarningPopupCookie";
+import Footer from "@/components/footer/footer";
 
 const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 
@@ -49,6 +50,7 @@ export default function RootLayout({
         <HamburgerMenu />
         <main className={kosugi.className}>
           {children}
+          <Footer />
         </main>
         {/* <CookieConsent /> */}
       </body>

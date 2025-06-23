@@ -1,162 +1,146 @@
-/*TimetableGridのほう*/
-.timetable-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /*時間を入れる場合頭に??pxを入れる*/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0px;
 }
 
-/*@media screen and (max-width: 767px) {
-  .timetable-grid {
-    grid-template-columns: 1fr 1fr; 時間を入れる場合頭に??pxを入れる
-  }
-}  */
-
-.venue-column {
-  background-color: #fff;
-  border: none;
-  position: relative;
+.toggleContainer {
+    margin: 20px;
+    display: flex;
 }
 
-.venue-header {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 8px 0;
-  font-weight: bold;
-  text-align: center;
-  z-index: 10; 
+.toggle {
+    position: relative;
+    display: flex;
+    width: 160px;
+    height: 36px;
+    background-color: #ddd;
+    border-radius: 18px;
+    overflow: hidden;
 }
 
-/*.time-col {
-  text-align: left;
-  border: none;
-  padding: 0.5rem;
-  background-color: #fafafa;
-  border-right: 1px solid #ccc;
-  height: 180px;
-  width: 80px;
-  min-width: 80px;
-  font-weight: bold;
-  text-align: right;
-  position: relative;
-  top: -100px;  これくらい上に動かすとうまく表示できるが、はみ出てしまう
-}  */
+.toggleOption {
+    flex: 1;
+    z-index: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
 
-@media screen and (max-width: 767px) {
-  .time-col {
-    min-width: 50px;
+.toggleOption.selected {
+    font-weight: bold;
+    color: #fff;
+}
+
+.toggleThumb {
+    position: absolute;
+    top: 2px;
+    width: calc(50% - 4px);
+    height: calc(100% - 4px);
+    background-color: #007bff;
+    border-radius: 16px;
+    transition: left 0.3s;
+}
+
+.headerRow {
+    display: grid;
+    grid-template-columns: 45px 1fr 1fr 45px;
+    align-items: stretch;
+    margin-bottom: 8px;
+    height: 60px;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.headerAxis {
+    width: 45px;
+}
+
+.headerStage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.stageTitle {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.stageDelay {
     font-size: 12px;
-    padding-right: 4px;
-  }
+    color: #007bff;
 }
 
-.grid-cell {
-  position: relative;
-  padding: 0;
-  height: 180px;
-  border: none;
-  background-color: #fff;
-  border-right: none;
-  border-right: none;
-  width: calc(50% - xxpx);
+.timeTableVertical {
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
 }
 
-/*　イベントボックス関連*/
-.event-box {
-  position: absolute;
-  left: 4px;
-  right: 4px;
-  border-radius: 4px;
-  padding: 4px;
-  font-size: 0.75rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  cursor: pointer;
-  text-align: center;
-  top: '${offset}%';
-  height: '${height}%';
+.axis {
+    position: relative;
+    width: 45px;
 }
 
-.event-box.gym {
-  background-color: #ffe8ad;
-  border: 1px solid #ffb700;
+.axisLabel {
+    position: absolute;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #333;
 }
 
-.event-box.outdoor {
-  background-color: #ffb0ed;
-  border: 1px solid #ff59d9;
+.axisLeft .axisLabel {
+    text-align: right;
+    right: 0;
+    padding-right: 8px;
 }
 
-.event-box.gym:hover {
-  background-color: #ffb700;
+.axisRight .axisLabel {
+    text-align: left;
+    left: 0;
+    padding-left: 8px;
 }
 
-.event-box.outdoor:hover {
-  background-color: #ff59d9;
+.eventsContainer {
+    position: relative;
+    flex: 1;
+    background-color: #ffffff;
 }
 
-.venue-column,
-.grid-cell {
-  position: relative;
-  overflow: hidden;
+.gridLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ccc;
 }
 
-
-
-
-
-
-/*ScheduleTableのほう */
-.schedule-table-wrapper {
-  padding: 1rem;
+.eventBox {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* タブ */
-.tabs {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  position: sticky;
+.gym {
+    background-color: #FBAED2;
+    border: 1px solid #FBAED2;
 }
 
-.tab-button {
-  padding: 0.5rem 1rem;
-  background: #eee;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.tab-button:hover{
-  background: #ddd;
-}
-
-.tab-button.active {
-  background: #ddd;
-  font-weight: bold;
-}
-
-/**　モーダル（出てくるやつ）*/
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  max-width: 500px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.detail{
-  font-size: 20px;
+.outdoor {
+    background-color: #ffd23d;
+    border: 1px solid #ffd23d;
 }

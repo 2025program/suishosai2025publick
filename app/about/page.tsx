@@ -1,7 +1,6 @@
 "use client"
 
 import "./about.css"
-import Footer from '@/components/footer/footer';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 export default function About() {
@@ -120,7 +119,6 @@ export default function About() {
 
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

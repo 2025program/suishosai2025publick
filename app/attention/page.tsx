@@ -3,7 +3,6 @@
 import React from "react";
 import "./attention.css"
 import Image from 'next/image';
-import Footer from '@/components/footer/footer';
 
 export default function attention() {
     return (
@@ -86,7 +85,6 @@ export default function attention() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
