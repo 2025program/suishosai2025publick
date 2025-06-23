@@ -86,7 +86,7 @@ export const festivalItems: FestivalItem[] = [
     { id: 52, img: 'event_52.jpg', title: '速球王', reading: "そっきゅうおう", attributes: [Sun], floor: 1, x: 110, y: 390, class: "野球部", location: "グラウンド" },
     { id: 53, img: 'event_53.png', title: 'ぴったり走れ!全力Q&RUN!', reading: "ぴったりはしれ！ぜんりょくきゅーあんどらん", attributes: [Sun], floor: 2, x: 385, y: 640, class: "陸上競技部", location: "3-8" },
     { id: 54, img: 'event_54.png', title: '異世界ツアーからの脱出', reading: "いせかいつあーからのだっしゅつ", attributes: [Sun], floor: 2, x: 457, y: 640, class: "有志", location: "選択A" },
-    { id: 55, img: 'event_55.jpg', title: '3D空中構造ゼミ 探求発表', reading: "すりーでぃーりったいこうぞうぜみ たんきゅうはっぴょう", attributes: [Sun], floor: 1, x: 110, y: 390, class: "有志", location: "グラウンド" },
+    { id: 55, img: 'event_55.jpg', title: '3D空中構造ゼミ 探求発表', reading: "すりーでぃーくうちゅうこうぞうぜみ たんきゅうはっぴょう", attributes: [Sun], floor: 1, x: 110, y: 390, class: "有志", location: "グラウンド" },
     { id: 56, img: 'event_56.png', title: '[革命]学生一人で企画やってみたPt(n+1)', reading: "[かくめい]がくせいひとりできかくやってみたPt(n+1)", attributes: [Sun], floor: 2, x: 755, y: 250, class: "有志", location: "2階渡り廊下" },
     { id: 57, img: 'event_57.jpg', title: 'アジアンダイニングスイランパラダイス', reading: "あじあんだいにんぐぱらだいす", attributes: [Moon, Soup], floor: 1, x: 710, y: 205, class: "定時制", location: "屋外" },
     { id: 58, img: 'event_58.png', title: '定時制 多文化共生研究会', reading: "ていじせい たぶんかきょうせいけんきゅうかい", attributes: [Moon], floor: 3, x: 666, y: 380, class: "多文化共生", location: "2-1" },
