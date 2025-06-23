@@ -39,6 +39,27 @@ export type Database = {
         }
         Relationships: []
       }
+      delay: {
+        Row: {
+          day: number | null
+          id: number
+          time: number | null
+          where: string | null
+        }
+        Insert: {
+          day?: number | null
+          id?: number
+          time?: number | null
+          where?: string | null
+        }
+        Update: {
+          day?: number | null
+          id?: number
+          time?: number | null
+          where?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           id: string

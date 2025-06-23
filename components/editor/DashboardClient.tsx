@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 import AnnouncementManager from './AnnouncementManager'
 import DevSwitch from "@/components/developer/developer";
 import { supabase } from '@/utils/supabase/supabase'
+import DelayEditor from './DelayEditor';
 
 // 既存のお知らせ型
 export type Announcement = {
@@ -56,6 +57,7 @@ export default function DashboardClient() {
                 </div>
             )}
             <h1 className="text-3xl font-bold mb-6">ダッシュボード</h1>
+            <DelayEditor />
             <AnnouncementManager />
         </div>
     )

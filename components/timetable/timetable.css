@@ -144,3 +144,7 @@
     background-color: #ffd23d;
     border: 1px solid #ffd23d;
 }
+
+.event_details {
+    padding: 10px;
+}
