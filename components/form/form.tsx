@@ -78,6 +78,7 @@ export default function Form() {
                     </div>
                     <div className="anc">
                         <p>翠翔祭に関するアンケートです。次年度以降のためにご回答をよろしくお願いします。</p>
+                        <p>回答期限：7/1（月）まで</p>
                         <p>※在校生は回答しないでください</p>
                         <a href="https://forms.gle/iUrw2htZqmvdJGj99" className="relative inline-block text-lg group mt-4">
                             <span className="relative z-10 block px-5 py-2 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
