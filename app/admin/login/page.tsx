@@ -12,7 +12,7 @@ export default async function LoginPage() {
     const { data: { user } } = await supabase.auth.getUser()
 
     return (
-        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', height: "100vh" }}>
             {/* メインコンテンツ */}
             <main>
                 {/* user が存在すればログイン状態、なければログインフォーム */}
