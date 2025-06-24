@@ -29,6 +29,12 @@ const formatTime = (dec: number): string => {
     return `${h}:${mm}`;
 };
 
+const getInitialDay = (): number => {
+    const today = new Date();
+    const date = today.getDate();
+    return date <= 28 ? 1 : 2;
+};
+
 // sampleEvents: start/end as "HH:MM"
 const sampleEvents: Record<number, Event[]> = {
     1: [
@@ -96,7 +102,9 @@ const TimeTable: React.FC = () => {
         }
         return map;
     }, []);
-    const [day, setDay] = useState<number>(1);
+
+    const [day, setDay] = useState<number>(getInitialDay);
+
     return (
         <div className="container">
             {/**トップ画像 */}
