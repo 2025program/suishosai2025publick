@@ -110,6 +110,13 @@
     align-items: center;
 }
 
+.list{
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    text-align: left;
+}
+
 .yoyaku h1,
 .payment h1,
 .guide h1{
@@ -124,7 +131,8 @@
 
 .yoyaku p,
 .payment p,
-.guide p{
+.guide p,
+.list li{
     font-size: clamp(14px, 2vw, 18px);
     margin-bottom: 1.5vh;
 }
