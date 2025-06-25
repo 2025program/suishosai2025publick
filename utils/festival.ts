@@ -31,10 +31,10 @@ export const festivalItems: FestivalItem[] = [
     //1年
     { id: 1, img: 'event_1.jpg', title: 'みぞぐちのみぞしる”ミゾベガス”～かけるなら今でしょ～', reading: "みぞぐちのみぞしる”ミゾベガス”～かけるならいまでしょ～", attributes: [Sun], floor: 2, x: 458, y: 380, class: "1-1", location: "2-8" },
     { id: 2, img: 'event_2.jpg', title: '謎解き縁日', reading: "なぞときえんにち", attributes: [Sun], floor: 4, x: 809, y: 380, class: "1-2", location: "1-2" },
-    { id: 3, img: 'event_3.jpg', title: '焼き鳥屋貴鳥', reading: "やきとりやきちょう", attributes: [Sun, Soup], floor: 1, x: 571, y: 290, class: "1-3", location: "屋外" },
+    { id: 3, img: 'event_3.jpg', title: '焼き鳥屋貴鳥', reading: "やきとりやきとり", attributes: [Sun, Soup], floor: 1, x: 571, y: 290, class: "1-3", location: "屋外" },
     { id: 4, img: 'event_4.jpg', title: '清水の国のアリス', reading: "しみずのくにのありす", attributes: [Sun], floor: 4, x: 598, y: 380, class: "1-4", location: "1-4" },
     { id: 5, img: 'event_5.png', title: 'たこ焼きたべChina!!', reading: "たこやきたべちゃいな", attributes: [Sun, Soup], floor: 1, x: 518, y: 290, class: "1-5", location: "屋外" },
-    { id: 6, img: 'event_6.jpg', title: '翠嵐研究所～覚悟を持って入所してください～', reading: "すいらんけんきゅうじょ～かくごをもってにゅうしょしてください～", attributes: [Sun], floor: 4, x: 458, y: 380, class: "1-6", location: "1-6" },
+    { id: 6, img: 'event_6.jpg', title: '衰乱研究所～覚悟を持って入所してください～', reading: "すいらんけんきゅうじょ～かくごをもってにゅうしょしてください～", attributes: [Sun], floor: 4, x: 458, y: 380, class: "1-6", location: "1-6" },
     { id: 7, img: 'event_7.jpg', title: '込宮隆の失踪', reading: "こみやたかしのしっそう", attributes: [Sun], floor: 4, x: 316, y: 380, class: "1-7", location: "1-7" },
     { id: 8, img: 'event_8.jpg', title: 'SUPER SUITENDO WORLD', reading: "すーぱーすいてんどーわーるど", attributes: [Sun], floor: 3, x: 458, y: 380, class: "1-8", location: "2-4" },
     { id: 9, img: 'event_9.png', title: 'おばけたたき', attributes: [Sun], floor: 3, x: 809, y: 380, class: "1-9", location: "1-9" },
