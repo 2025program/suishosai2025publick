@@ -179,6 +179,14 @@ fill:#000000;
 font-weight:bold;
 }
 
+.f21
+{
+font-family:'Yu Gothic';
+font-size:7px;
+fill:#000000;
+font-weight:bold;
+}
+
 .f3
 {
 font-family:'Yu Gothic';
@@ -352,6 +360,14 @@ fill:#000000;
 font-weight:bold;
 }
 
+.f21
+{
+font-family:'Yu Gothic';
+font-size:7px;
+fill:#000000;
+font-weight:bold;
+}
+
 .f3
 {
 font-family:'Arial Unicode MS';
@@ -490,6 +506,13 @@ fill:#000000;
 font-weight:bold;
 }
 
+.f21
+{
+font-family:'Yu Gothic';
+font-size:7px;
+fill:#000000;
+font-weight:bold;
+}
    
 .p0
 {
@@ -583,6 +606,14 @@ fill:#000000;
 {
 font-family:'Yu Gothic';
 font-size:9.960000038px;
+fill:#000000;
+font-weight:bold;
+}
+
+.f21
+{
+font-family:'Yu Gothic';
+font-size:7px;
 fill:#000000;
 font-weight:bold;
 }
@@ -6506,19 +6537,19 @@ stroke-linejoin:miter;
                    id="text1377">3-1</text><text
                    x="0"
                    y="-20.145325"
-                   class="f4"
+                   class="f5"
                    id="text1378">サ</text><text
-                   x="9"
+                   x="6"
                    y="-20.145325"
-                   class="f4"
+                   class="f5"
                    id="text1379">ッ</text><text
+                   x="12"
+                   y="-20.145325"
+                   class="f5"
+                   id="text1380">カ</text><text
                    x="18"
                    y="-20.145325"
-                   class="f4"
-                   id="text1380">カ</text><text
-                   x="9"
-                   y="-4.149231"
-                   class="f4"
+                   class="f5"
                    id="text1381">ー</text></g></g></g><defs
              id="defs1383"><clipPath
                id="clipPath1549"><path
