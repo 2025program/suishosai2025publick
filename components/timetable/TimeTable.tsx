@@ -38,7 +38,7 @@ const getInitialDay = (): number => {
 // sampleEvents: start/end as "HH:MM"
 const sampleEvents: Record<number, Event[]> = {
     1: [
-        { id: 'e1', cell: 68, stage: 'gym', start: '09:40', end: '10:10', title: 'スイラン・ブラバン・ビックバン！' },
+        { id: 'e1', cell: 69, stage: 'gym', start: '09:40', end: '10:10', title: 'スイラン・ブラバン・ビックバン！' },
         { id: 'e2', cell: 70, stage: 'gym', start: '10:40', end: '11:10', title: '弦楽部' },
         { id: 'e3', cell: 71, stage: 'gym', start: '11:40', end: '12:00', title: '書道部' },
         { id: 'e5', cell: 72, stage: 'gym', start: '13:00', end: '13:45', title: 'ダンス部' },
@@ -54,7 +54,7 @@ const sampleEvents: Record<number, Event[]> = {
         { id: 'e13', cell: 74, stage: 'gym', start: '11:40', end: '12:00', title: '朝鮮学校舞踊部' },
         { id: 'e14', cell: 64, stage: 'gym', start: '12:10', end: '12:30', title: '定時制 多文化共生' },
         { id: 'e15', cell: 73, stage: 'gym', start: '13:00', end: '13:25', title: '音楽部' },
-        { id: 'e16', cell: 68, stage: 'gym', start: '13:40', end: '14:10', title: 'スイラン・ブラバン・ビックバン！' },
+        { id: 'e16', cell: 69, stage: 'gym', start: '13:40', end: '14:10', title: 'スイラン・ブラバン・ビックバン！' },
         { id: 'e17', cell: 67, stage: 'outdoor', start: '10:30', end: '11:00', title: 'すぱげてぃ' },
         { id: 'e18', cell: 66, stage: 'outdoor', start: '12:10', end: '13:40', title: '翠嵐スター発掘' },
         { id: 'e19', cell: 68, stage: 'outdoor', start: '14:00', end: '15:30', title: 'ミスミス・裏ミスミス' },
