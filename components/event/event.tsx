@@ -48,6 +48,10 @@ const EventPage: React.FC = () => {
 
     // 固定属性リストを利用するので、iconTypes は fixedAttributes から取得
     const iconTypes = fixedAttributes.map((attr) => attr.icon);
+    const pass = "ねお"
+    const neo_name = "根尾 昂"
+    const neo_eng = "NEO AKIRA"
+    const neo_read = "ねお あきら"
 
     // クエリパラメータに基づく初期フィルター設定（必要に応じて）
     useEffect(() => {
@@ -233,23 +237,53 @@ const EventPage: React.FC = () => {
                                 </div>
                             ))
                         ) : (
-                            <div className='nothing'>
-                                <div className="leftnot">
-                                    <div className="leftnotbox">
-                                        <Image
-                                            className="piceve"
-                                            src="/welcome/logo.png"
-                                            alt="画像を読み込めませんでした"
-                                            width={1000}
-                                            height={1000}
-                                            priority
-                                        />
+                            <>
+                                {searchTerm === pass ? (
+                                    <div className="all_neo">
+                                        <div className="neo_all_cover">
+                                            <div className="neo_l">
+                                                <div className="neo_title_name">
+                                                    {neo_name}
+                                                </div>
+                                                <div className="neo_title_eng">
+                                                    {neo_eng}
+                                                </div>
+                                                <div className="neo_title_read">
+                                                    {neo_read}
+                                                </div>
+                                            </div>
+                                            <div className="neo_r">
+                                                <Image
+                                                    className="neo_pic"
+                                                    src="/event/neoakira.jpg"
+                                                    alt="画像を読み込めませんでした"
+                                                    width={1000}
+                                                    height={1000}
+                                                    priority
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='rightnot'>
-                                    <div className="rightnotbox">該当項目はありません</div>
-                                </div>
-                            </div>
+                                ) : (
+                                    <div className='nothing'>
+                                        <div className="leftnot">
+                                            <div className="leftnotbox">
+                                                <Image
+                                                    className="piceve"
+                                                    src="/welcome/logo.png"
+                                                    alt="画像を読み込めませんでした"
+                                                    width={1000}
+                                                    height={1000}
+                                                    priority
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='rightnot'>
+                                            <div className="rightnotbox">該当項目はありません</div>
+                                        </div>
+                                    </div>
+                                )}
+                            </>
                         )}
                     </div>
                 </div>

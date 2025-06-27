@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     background-color: white;
+    min-height: 100vh;
 }
 
 .e-boxcontent {
@@ -595,4 +596,44 @@
     .rightnotbox {
         height: 150px;
     }
+}
+
+.all_neo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / -1;
+}
+
+.neo_all_cover {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+/* 左側 70% */
+.neo_l {
+    flex: 0 0 70%;
+    /* 余白や内側余白が欲しければ追加 */
+    padding: 1rem;
+}
+
+/* 右側 30% */
+.neo_r {
+    flex: 0 0 30%;
+    /* 画像を中央に寄せたい場合など */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.neo_title_name {
+    font-size: 2rem;
+}
+
+.neo_pic {
+    width: 150px;
+    border-radius: 10px;
 }
