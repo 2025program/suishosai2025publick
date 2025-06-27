@@ -5,6 +5,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import HamburgerMenu from "@/components/HamburgerMenu/HamburgerMenu";
 import WarningPopupCookie from "@/components/warning/WarningPopupCookie";
 import Footer from "@/components/footer/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const kosugi = Noto_Sans_JP({ weight: "500", subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="jp">
       <body >
+        <SpeedInsights />
         <WarningPopupCookie />
         <HamburgerMenu />
         <main className={kosugi.className}>
