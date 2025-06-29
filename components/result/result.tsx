@@ -33,7 +33,7 @@ export default function Gresult() {
                     <ol className="list">
                         <li>HASEGAWAFFLE（2-4）</li>
                         <li>翠嵐クレープ～モリヤの翠イーツ屋さん～（2-7）</li>
-                        <li>焼き鳥屋貴鳥（1-3）</li>
+                        <li>焼き鳥屋喜鳥（1-3）</li>
                     </ol>
                 </div>
                 <div className="result_normal">
