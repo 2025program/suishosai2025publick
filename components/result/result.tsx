@@ -22,21 +22,27 @@ export default function Gresult() {
                 <h2>《結果発表》</h2>
                 <div className="result_normal">
                     <h3>企画部門</h3>
-                    <p>1位:</p>
-                    <p>2位:</p>
-                    <p>3位:</p>
+                    <ol className="list">
+                        <li>新世紀翠嵐シューティングコースター～全授業数学化計画～（3-3,3-5合同）</li>
+                        <li>末包の囁き（2-9）</li>
+                        <li>スナダン・ジョーンズ～宝を隠す山～（3-1,3-2合同）</li>
+                    </ol>
                 </div>
-                <div className="result_food">
+                <div className="result_normal">
                     <h3>調理食販部門</h3>
-                    <p>1位:</p>
-                    <p>2位:</p>
-                    <p>3位:</p>
+                    <ol className="list">
+                        <li>HASEGAWAFFLE（2-4）</li>
+                        <li>翠嵐クレープ～モリヤの翠イーツ屋さん～（2-7）</li>
+                        <li>焼き鳥屋貴鳥（1-3）</li>
+                    </ol>
                 </div>
-                <div className="result_stage">
+                <div className="result_normal">
                     <h3>ステージ部門</h3>
-                    <p>1位:</p>
-                    <p>2位:</p>
-                    <p>3位:</p>
+                    <ol className="list">
+                        <li>ダンス部</li>
+                        <li>スイラン・ブラバン・ビッグバン！</li>
+                        <li>弦楽部</li>
+                    </ol>
                 </div>
             </div>
 

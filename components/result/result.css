@@ -51,21 +51,30 @@
 }
 
 .result_normal{
-    width: 500px;
-    background-color: #ff59d9;
     margin: 20px;
+    width: auto;
+    margin: 10px;
 }
 
-.result_food{
-    width: 500px;
-    background-color: #ffb700;
-    margin: 20px;
+.list {
+    list-style: none; 
+    padding-left: 0;
+    counter-reset: rank;
+    margin: 1rem 0;
+    text-align: left;
 }
 
-.result_stage{
-    width: 500px;
-    background-color: #00a5ff;
-    margin: 20px;
+.list li {
+    counter-increment: rank;
+    margin-bottom: 0.5rem;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.list li::before {
+    content: counter(rank) "位";
+    position: absolute;
+    left: 0;
 }
 
 .anc{

@@ -5,6 +5,7 @@ import Gresult from '@/components/result/result';
 import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
+import Finish from '@/components/finish/finish';
 import { Result } from 'postcss';
 
 
@@ -86,6 +87,7 @@ export default function Home() {
           </section>
 
           <div className="mid_header">
+            <Finish />
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
               <div className="headerbox_right"></div>
@@ -102,8 +104,8 @@ export default function Home() {
               </div>
             </div>
 
-            <Form />
-            {/*<Gresult></Gresult>*/}   {/*どっちかのみ使用 */}
+            {/*<Form />*/}
+            <Gresult />   {/*どっちかのみ使用 */}
 
             <div className="headerbox_top">
               <div className="headerbox_left"></div>
