@@ -46,7 +46,7 @@ export default function Gresult() {
                 </div>
             </div>
 
-            <div className="result_back">
+            <div className="form_back">
                 <Image
                     className="form_topper"
                     src="/about/raijousha.png"
