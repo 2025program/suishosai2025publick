@@ -6,7 +6,6 @@ import Announce from '@/components/announce/announce';
 import Access from '@/components/access/access';
 import TopSelect from '@/components/topselect/topselect';
 import Finish from '@/components/finish/finish';
-import { Result } from 'postcss';
 
 
 // Homeコンポーネント
