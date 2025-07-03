@@ -46,7 +46,7 @@ export default function Gresult() {
                 </div>
             </div>
 
-            <div className="form_back">
+            {/**<div className="form_back">
                 <Image
                     className="form_topper"
                     src="/about/raijousha.png"
@@ -68,7 +68,7 @@ export default function Gresult() {
                     </span>
                     <span className="absolute bottom-0 right-0 w-full h-10 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
                 </a>
-            </div>
+            </div>*/}
         </div>
     )
 }
